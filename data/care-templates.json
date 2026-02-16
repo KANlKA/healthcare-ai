@@ -1,0 +1,60 @@
+{
+  "post_surgery": {
+    "name": "Post-Surgical Recovery Template",
+    "categories": [
+      {
+        "name": "Pain Management",
+        "steps": [
+          "Take prescribed pain medication as directed",
+          "Monitor pain levels on 1-10 scale",
+          "Report severe or uncontrolled pain to doctor"
+        ]
+      },
+      {
+        "name": "Wound Care",
+        "steps": [
+          "Keep surgical site clean and dry",
+          "Change dressings as instructed",
+          "Watch for signs of infection"
+        ]
+      },
+      {
+        "name": "Physical Activity",
+        "steps": [
+          "Begin gentle walking as approved",
+          "Avoid heavy lifting",
+          "Gradually increase activity level"
+        ]
+      }
+    ]
+  },
+  "diabetes": {
+    "name": "Diabetes Management Template",
+    "categories": [
+      {
+        "name": "Blood Sugar Monitoring",
+        "steps": [
+          "Check blood glucose as prescribed",
+          "Record readings in log",
+          "Report concerning patterns to doctor"
+        ]
+      },
+      {
+        "name": "Medication",
+        "steps": [
+          "Take diabetes medication as scheduled",
+          "Store insulin properly",
+          "Never skip doses"
+        ]
+      },
+      {
+        "name": "Diet",
+        "steps": [
+          "Follow meal plan",
+          "Monitor carbohydrate intake",
+          "Stay hydrated"
+        ]
+      }
+    ]
+  }
+}

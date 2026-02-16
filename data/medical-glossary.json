@@ -1,0 +1,52 @@
+{
+  "adherence": {
+    "term": "Adherence",
+    "definition": "Following medical advice and treatment plans as prescribed",
+    "plainLanguage": "Taking your medicine and following your care plan as your doctor told you to"
+  },
+  "acute": {
+    "term": "Acute",
+    "definition": "Condition with rapid onset and short duration",
+    "plainLanguage": "Comes on suddenly and doesn't last long"
+  },
+  "chronic": {
+    "term": "Chronic",
+    "definition": "Long-lasting or persistent condition",
+    "plainLanguage": "A health problem that lasts a long time"
+  },
+  "comorbidity": {
+    "term": "Comorbidity",
+    "definition": "Presence of two or more diseases or conditions",
+    "plainLanguage": "Having more than one health problem at the same time"
+  },
+  "contraindication": {
+    "term": "Contraindication",
+    "definition": "A condition or factor that makes a treatment inadvisable",
+    "plainLanguage": "A reason why you shouldn't use a certain treatment"
+  },
+  "dosage": {
+    "term": "Dosage",
+    "definition": "The amount and frequency of medication to take",
+    "plainLanguage": "How much medicine to take and how often"
+  },
+  "side_effect": {
+    "term": "Side Effect",
+    "definition": "Unintended effect of medication or treatment",
+    "plainLanguage": "An unwanted change that can happen when you take medicine"
+  },
+  "monitoring": {
+    "term": "Monitoring",
+    "definition": "Regular checking or tracking of health status",
+    "plainLanguage": "Keeping track of how you're doing"
+  },
+  "baseline": {
+    "term": "Baseline",
+    "definition": "Starting point for comparison",
+    "plainLanguage": "Where you started before treatment"
+  },
+  "prognosis": {
+    "term": "Prognosis",
+    "definition": "Expected course and outcome of a condition",
+    "plainLanguage": "What doctors think will happen with your health"
+  }
+}
