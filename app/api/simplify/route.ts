@@ -73,7 +73,7 @@ export async function POST(request: NextRequest) {
       promptType: 'plain_language',
       requestParams: { stepId, literacyLevel, mode, originalText },
       response: simplified,
-      model: 'llama-3.1-70b-versatile',
+      modelName: 'llama-3.1-70b-versatile',
       tokensUsed: Math.ceil((originalText.length + simplified.length) / 4),
       validUntil,
       hitCount: 1

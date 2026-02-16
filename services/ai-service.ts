@@ -7,23 +7,27 @@ interface AIServiceConfig {
 }
 
 class AIService {
-  private client: Groq;
+  private client: Groq | null = null;
   private config: AIServiceConfig;
 
   constructor() {
-    if (!process.env.GROQ_API_KEY) {
-      throw new Error('GROQ_API_KEY is not set');
-    }
-
-    this.client = new Groq({
-      apiKey: process.env.GROQ_API_KEY
-    });
-
     this.config = {
       model: "llama-3.1-70b-versatile",
       maxTokens: 500,
       temperature: 0.3
     };
+  }
+
+  private getClient(): Groq {
+    if (!this.client) {
+      if (!process.env.GROQ_API_KEY) {
+        throw new Error('GROQ_API_KEY is not set');
+      }
+      this.client = new Groq({
+        apiKey: process.env.GROQ_API_KEY
+      });
+    }
+    return this.client;
   }
 
   async generateExplanation(
@@ -99,7 +103,7 @@ Provide only the plain-language version, no explanations.`;
 
   private async invokeModel(prompt: string): Promise<string> {
     try {
-      const chatCompletion = await this.client.chat.completions.create({
+      const chatCompletion = await this.getClient().chat.completions.create({
         messages: [{ role: "user", content: prompt }],
         model: this.config.model,
         temperature: this.config.temperature,

@@ -17,7 +17,7 @@ async function backupData() {
       fs.mkdirSync(backupDir, { recursive: true });
     }
 
-    const collections = await mongoose.connection.db.collections();
+    const collections = await mongoose.connection.db!.collections();
     
     for (const collection of collections) {
       const data = await collection.find({}).toArray();

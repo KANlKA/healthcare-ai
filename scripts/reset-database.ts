@@ -16,7 +16,7 @@ async function resetDatabase() {
 
     rl.question('⚠️  This will DELETE ALL DATA. Type "CONFIRM" to proceed: ', async (answer) => {
       if (answer === 'CONFIRM') {
-        const collections = await mongoose.connection.db.collections();
+        const collections = await mongoose.connection.db!.collections();
         
         for (const collection of collections) {
           await collection.drop();

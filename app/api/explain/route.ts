@@ -40,7 +40,7 @@ export async function POST(request: NextRequest) {
         explanation: cached.response,
         cached: true,
         generatedAt: cached.createdAt,
-        model: cached.model
+        model: cached.modelName
       });
     }
 
@@ -70,7 +70,7 @@ export async function POST(request: NextRequest) {
       promptType: 'explanation',
       requestParams: { stepId, literacyLevel, language },
       response: explanation,
-      model: 'llama-3.1-70b-versatile',
+      modelName: 'llama-3.1-70b-versatile',
       tokensUsed: Math.ceil(explanation.length / 4), // Rough estimate
       validUntil,
       hitCount: 1

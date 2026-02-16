@@ -51,7 +51,7 @@ class CacheService {
           cacheKey: key,
           promptType: metadata.promptType || 'general',
           response: value as string,
-          model: metadata.model || 'unknown',
+          modelName: metadata.model || 'unknown',
           tokensUsed: metadata.tokensUsed || 0,
           validUntil,
           $inc: { hitCount: 1 }

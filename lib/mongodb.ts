@@ -1,11 +1,5 @@
 import mongoose from 'mongoose';
 
-if (!process.env.MONGODB_URI) {
-  throw new Error('Please add your MONGODB_URI to .env.local');
-}
-
-const MONGODB_URI: string = process.env.MONGODB_URI;
-
 interface MongooseCache {
   conn: typeof mongoose | null;
   promise: Promise<typeof mongoose> | null;
@@ -24,6 +18,11 @@ if (!cached) {
 async function connectDB(): Promise<typeof mongoose> {
   if (cached!.conn) {
     return cached!.conn;
+  }
+
+  const MONGODB_URI = process.env.MONGODB_URI;
+  if (!MONGODB_URI) {
+    throw new Error('Please add your MONGODB_URI to .env.local');
   }
 
   if (!cached!.promise) {

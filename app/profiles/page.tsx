@@ -1,4 +1,6 @@
 // app/profiles/page.tsx
+export const dynamic = 'force-dynamic';
+
 import { Suspense } from 'react';
 import Link from 'next/link';
 import { ProfileCard } from '@/components/profile/ProfileCard';
