@@ -1,0 +1,14 @@
+[
+  {
+    "profileId": "profile_001",
+    "name": "Alex Johnson (Synthetic)",
+    "age": 45,
+    "scenarioDescription": "Post-surgical knee replacement recovery"
+  },
+  {
+    "profileId": "profile_002",
+    "name": "Maria Garcia (Synthetic)",
+    "age": 62,
+    "scenarioDescription": "Type 2 diabetes management"
+  }
+]
