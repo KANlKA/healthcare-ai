@@ -122,20 +122,18 @@ async function JourneyContent({ profileId }: { profileId: string }) {
 
         <TabsContent value="timeline" className="space-y-4">
           <div className="bg-white rounded-lg border p-6">
-            <CareJourneyTimeline 
+            <CareJourneyTimeline
               steps={steps}
               timeline={data.timeline}
-              onStepClick={(stepId) => console.log('Step clicked:', stepId)}
             />
           </div>
         </TabsContent>
 
         <TabsContent value="dependencies" className="space-y-4">
           <div className="bg-white rounded-lg border p-6">
-            <DependencyGraph 
+            <DependencyGraph
               steps={steps}
               dependencies={dependencies}
-              onNodeClick={(stepId) => console.log('Node clicked:', stepId)}
             />
           </div>
         </TabsContent>

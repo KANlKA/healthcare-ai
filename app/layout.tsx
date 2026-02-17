@@ -5,6 +5,7 @@ import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { DisclaimerBanner } from '@/components/layout/DisclaimerBanner';
+import { AuthProvider } from '@/components/providers/AuthProvider';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -22,14 +23,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <div className="flex min-h-screen flex-col">
-          <DisclaimerBanner />
-          <Header />
-          <main className="flex-1 container mx-auto px-4 py-8">
-            {children}
-          </main>
-          <Footer />
-        </div>
+        <AuthProvider>
+          <div className="flex min-h-screen flex-col">
+            <DisclaimerBanner />
+            <Header />
+            <main className="flex-1 container mx-auto px-4 py-8">
+              {children}
+            </main>
+            <Footer />
+          </div>
+        </AuthProvider>
       </body>
     </html>
   );

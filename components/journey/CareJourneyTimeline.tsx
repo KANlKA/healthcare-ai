@@ -8,7 +8,7 @@ import { Badge } from '@/components/ui/badge';
 interface CareJourneyTimelineProps {
   steps: any[];
   timeline: any[];
-  onStepClick: (stepId: string) => void;
+  onStepClick?: (stepId: string) => void;
 }
 
 export function CareJourneyTimeline({ steps, timeline, onStepClick }: CareJourneyTimelineProps) {
@@ -48,7 +48,7 @@ export function CareJourneyTimeline({ steps, timeline, onStepClick }: CareJourne
           <Card
             key={step.stepId}
             className="p-4 cursor-pointer hover:shadow-md transition-shadow"
-            onClick={() => onStepClick(step.stepId)}
+            onClick={() => onStepClick?.(step.stepId)}
           >
             <div className="flex justify-between items-start mb-2">
               <h3 className="font-semibold">{step.description}</h3>

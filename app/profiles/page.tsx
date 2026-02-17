@@ -3,17 +3,17 @@ export const dynamic = 'force-dynamic';
 
 import { Suspense } from 'react';
 import Link from 'next/link';
-import { ProfileCard } from '@/components/profile/ProfileCard';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/skeleton';
-import { ArrowLeft, Filter } from 'lucide-react';
+import { ArrowLeft } from 'lucide-react';
+import { ProfilesFilter } from '@/components/profile/ProfilesFilter';
 
 async function getProfiles() {
   const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
   const res = await fetch(`${baseUrl}/api/profiles`, {
     next: { revalidate: 3600 }
   });
-  
+
   if (!res.ok) throw new Error('Failed to fetch profiles');
   return res.json();
 }
@@ -40,46 +40,27 @@ async function ProfilesList() {
     );
   }
 
-  return (
-    <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-      {profiles.map((profile: any) => (
-        <Link 
-          key={profile.profileId} 
-          href={`/profiles/${profile.profileId}`}
-          className="transition-transform hover:scale-105"
-        >
-          <ProfileCard profile={profile} />
-        </Link>
-      ))}
-    </div>
-  );
+  return <ProfilesFilter profiles={profiles} />;
 }
 
 export default function ProfilesPage() {
   return (
     <div className="space-y-8">
       {/* Header */}
-      <div className="flex items-center justify-between">
-        <div className="space-y-2">
-          <Button variant="ghost" size="sm" asChild>
-            <Link href="/">
-              <ArrowLeft className="w-4 h-4 mr-2" />
-              Back to Home
-            </Link>
-          </Button>
-          <h1 className="text-3xl font-bold">Synthetic Patient Profiles</h1>
-          <p className="text-gray-600">
-            Select a profile to explore their care journey
-          </p>
-        </div>
-
-        <Button variant="outline" size="sm">
-          <Filter className="w-4 h-4 mr-2" />
-          Filter
+      <div className="space-y-2">
+        <Button variant="ghost" size="sm" asChild>
+          <Link href="/">
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Home
+          </Link>
         </Button>
+        <h1 className="text-3xl font-bold">Synthetic Patient Profiles</h1>
+        <p className="text-gray-600">
+          Select a profile to explore their care journey
+        </p>
       </div>
 
-      {/* Profiles Grid */}
+      {/* Profiles Grid with Filter */}
       <Suspense fallback={<ProfilesLoading />}>
         <ProfilesList />
       </Suspense>
